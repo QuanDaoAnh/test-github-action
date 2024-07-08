@@ -20,4 +20,4 @@ jobs:
       
       - name: Get changed files
         run: | 
-          git diff --name-only ${{ github.event.before }} ${{ github.event.after }}
+          git log --pretty=oneline "${{ github.event.before }}...${{ github.event.after }}"
